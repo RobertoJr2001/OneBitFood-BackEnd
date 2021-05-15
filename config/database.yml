@@ -1,0 +1,15 @@
+default: &default
+ adapter: postgresql
+ encoding: unicode
+ username: <%=ENV["DATABASE_USERNAME"] %>
+ password: <%=ENV["DATABASE_PASSWD"] %>
+
+development:
+ <<: *default
+ database: onebitfood
+
+production:
+  <<: *default
+  database: OneBitFood_production
+  username: OneBitFood
+  password: <%= ENV['ONEBITFOOD_DATABASE_PASSWORD'] %>
