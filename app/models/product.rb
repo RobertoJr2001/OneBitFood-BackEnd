@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :product_category
 
-  has_many :order_products, class_name: "order_product", foreign_key: "reference_id"
+  has_many :order_products
 
   validates :name, :price, presence: true
 
